@@ -2,6 +2,7 @@ console.log('hello');
 
 var total=0;
 var tax=0.06;
+var taxTotal=0;
 var shoppingList=[
 {
     name: 'cat food',
@@ -61,10 +62,13 @@ shoppingList.forEach(function(obj) {
   console.log(obj.tax);
 
   total += obj.price;
-  tax = obj.tax*obj.price-obj.price;
-  });
+  if (obj.tax===true) {
+   console.log(tax*obj.price);
+   taxTotal += obj.price*tax;
+  };
+});
 
 
 console.log(name);
-console.log(total);
-console.log(tax);
+console.log(total.toFixed(2));
+console.log(taxTotal.toFixed(2));
