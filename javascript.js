@@ -61,16 +61,9 @@ shoppingList.forEach(function(obj) {
   console.log(obj.tax);
 
   total += obj.price;
+  tax = obj.tax*obj.price-obj.price;
+  });
 
-  function MULTIPLY(price, tax) {
-    if (obj.tax===true) {
-     console.log(price*tax);
-   } else {
-     console.log(price);
-   }
-    var product=MULTIPLY(price, tax);
-  };
-});
 
 console.log(name);
 console.log(total);
