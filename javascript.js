@@ -1,6 +1,11 @@
-console.log('hello');
+console.log('Hello, what are you doing looking in here?');
 
 var total=0;
+var newElement=document.createElement('div');
+newElement.style.color='teal';
+newElement.style.width='600px';
+newElement.style.height='600px';
+document.body.appendChild(newElement);
 var tax=0.06;
 var taxTotal=0;
 var shoppingList=[
@@ -26,7 +31,7 @@ var shoppingList=[
   },
   {
     name: 'elephant',
-    price: 10238.94,
+    price: 21999.99,
     tax: true
   },
   {
@@ -57,18 +62,32 @@ var shoppingList=[
 ];
 
 shoppingList.forEach(function(obj) {
-  console.log(obj.name);
-  console.log(obj.price);
-  console.log(obj.tax);
+
+  var name1=document.createElement('p');
+  name1.innerText =obj.name;
+  newElement.appendChild(name1);
+
+
+  var name1=document.createElement('p');
+  name1.innerText =obj.price;
+  newElement.appendChild(name1);
 
   total += obj.price;
   if (obj.tax===true) {
-   console.log(tax*obj.price);
+
    taxTotal += obj.price*tax;
   };
 });
 
+var name1=document.createElement('p');
+name1.innerText =taxTotal.toFixed(2);
+newElement.appendChild(name1);
+
+var name1=document.createElement('p');
+name1.innerText =total.toFixed(2);
+newElement.appendChild(name1);
+
 
 console.log(name);
-console.log(total.toFixed(2));
-console.log(taxTotal.toFixed(2));
+console.log('Your total is ' + total.toFixed(2));
+console.log('Your tax is ' + taxTotal.toFixed(2));
