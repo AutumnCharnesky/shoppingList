@@ -3,6 +3,7 @@ console.log('Hello, what are you doing looking in here?');
 var total=0;
 var newElement=document.createElement('div');
 newElement.style.color='teal';
+newElement.style.backgroundcolor='orange';
 newElement.style.width='600px';
 newElement.style.height='600px';
 document.body.appendChild(newElement);
@@ -80,14 +81,14 @@ shoppingList.forEach(function(obj) {
 });
 
 var name1=document.createElement('p');
-name1.innerText =taxTotal.toFixed(2);
+name1.innerText ='Your total is $'+total.toFixed(2);
 newElement.appendChild(name1);
 
 var name1=document.createElement('p');
-name1.innerText =total.toFixed(2);
+name1.innerText ='Your total tax is $'+taxTotal.toFixed(2);
 newElement.appendChild(name1);
 
 
 console.log(name);
-console.log('Your total is ' + total.toFixed(2));
-console.log('Your tax is ' + taxTotal.toFixed(2));
+console.log('Your total is $' + total.toFixed(2));
+console.log('Your tax is $' + taxTotal.toFixed(2));
